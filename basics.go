@@ -1,4 +1,4 @@
-package basics
+package main
 // Variables
 //  Can be defined by explicitly specifying a type.
 var explicit int // Explicitly typed
