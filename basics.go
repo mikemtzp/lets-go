@@ -1,11 +1,12 @@
 package main
+
 // Variables
 //  Can be defined by explicitly specifying a type.
 var explicit int // Explicitly typed
 
 // You can also use an initializer ':=', and the compiler will assign
 // the variable type to match the type of the initializer
-//  The return type(s) of a function must be specified in the function declaration.
+//  The return type(s) of a function must be specified in the function declaration (int).
 func implicit() int {
   implicit := 10   // Implicitly typed as an int
   return implicit
@@ -19,6 +20,20 @@ func varType() int {
   // count = false // This throws a compiler error due to assigning a non `int` type
 
   return count
+}
+
+// Type inference: the variable's type is inferred from the value on the right hand side.
+func typeInference() (int, int, float64, complex128) {
+  var a int
+  b := a // j is also an int
+
+  // However, when the right hand side is a literal value (an untyped numeric constant like 42 or 3.14),
+  // the new variable will be an int, float64, or complex128 depending on its precision:
+  i := 42           // int
+  f := 3.14         // float64
+  c := 0.867 + 0.5i // complex128
+
+  return b, i, f, c
 }
 
 // Constants
