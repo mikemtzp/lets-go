@@ -63,6 +63,15 @@ func sameLineDecl() (int, string) {
 //  Their value cannot change during the execution of the program.
 const Age = 21 // Defines a numeric constant 'Age' with the value of 21
 
+// constants can be computed as long as the computation can happen at compile time.
+const firstName = "Lane"
+const lastName = "Wagner"
+const fullName = firstName + " " + lastName
+
+// you cannot declare a constant that can only be computed at run-time like you can in JavaScript. This breaks:
+// the current time can only be known when the program is running
+// const currentTime = time.Now()
+
 // Functions
 // Go functions accept 0 or more parameters.
 // Parameters MUST BE explicitly typed, there is no type inference.
