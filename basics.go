@@ -173,3 +173,50 @@ func initialStatement() {
     fmt.Println("Email is invalid")
 }
 }
+
+// Structs
+// We use structs in Go to represent structured data.
+// It's often convenient to group different types of variables together.
+type bus struct {
+  Make string
+  Model string
+  Height int
+  Width int
+}
+
+// Nested Structs
+// Structs can be nested to represent more complex entities:
+type car struct {
+  Make string
+  Model string
+  Height int
+  Width int
+  FrontWheel Wheel
+  BackWheel Wheel
+}
+
+// Note 'Wheel' needs to be public so it can be available for 'car' struct
+type Wheel struct {
+  Radius int
+  Material string
+}
+
+func strut() {
+  myCar := car{}
+  myCar.FrontWheel.Radius = 5
+}
+
+// Anonymous Structs
+// An anonymous struct is just like a regular struct,
+// but it is defined without a name and therefore cannot be referenced elsewhere in the code.
+func anonymousStruct() struct{Make string; Model string} {
+  myCar := struct {
+    Make string
+    Model string
+  } {
+    Make: "tesla",
+    Model: "model 3",
+  }
+
+  return myCar
+}
