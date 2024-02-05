@@ -106,6 +106,35 @@ func split(sum int) (x, y int) {
 	return
 }
 
+// Variables in Go are passed by value
+// "Pass by value" means that when a variable is passed into a function,
+// that function receives a copy of the variable.
+func value(){
+    x := 5
+    increment(x)
+
+    fmt.Println(x)
+    // still prints 5,
+    // because the increment function
+    // received a copy of x
+}
+
+func increment(x int) { x++ }
+
+// How to Ignore Return Values
+// A function can return a value that the caller doesn't care about.
+// We can explicitly ignore variables by using an underscore: _
+func getPoint() (x int, y int) {
+  return 3, 4
+}
+
+// ignore y value
+func ignore() int {
+  x, _ := getPoint()
+  return x
+}
+
+
 // Conditionals
 func ifElse() {
   height := 10
