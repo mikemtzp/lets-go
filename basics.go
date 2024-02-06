@@ -220,3 +220,18 @@ func anonymousStruct() struct{Make string; Model string} {
 
   return myCar
 }
+
+// Go doesn't support classes or inheritance in the complete sense.
+// Embedded structs are just a way to elevate and share fields between struct definitions.
+type automovile struct {
+  make string
+  model string
+}
+
+type truck struct {
+  // "automovile" is embedded, so the definition of a
+  // "truck" now also additionally contains all
+  // of the fields of the car struct
+  automovile
+  bedSize int
+}
