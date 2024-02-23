@@ -2,14 +2,14 @@ package main
 
 import "fmt"
 
-func main() {
+func printing() {
 	// Println formats using the default formats for its operands and writes to standard output.
 	fmt.Println("Hello world!")
 
-	var w int
-	var x float64
-	var y bool
-	var z string
+	var w int // 0
+	var x float64 // 0.000000
+	var y bool // false
+	var z string // ""
 
 	// fmt.Printf - Prints a formatted string to standard out.
 	// %v: to print the value of the argument in a default format.
@@ -22,11 +22,8 @@ func main() {
 // fmt.Sprintf() - Returns the formatted string
 func sprintf() (string, string) {
 		// The %v variant prints the Go syntax representation of a value, it's a nice default.
-	s := fmt.Sprintf("I am %v years old", 10)
-	// I am 10 years old
-
-	b := fmt.Sprintf("I am %v years old", "way too many")
-	// I am way too many years old
+	s := fmt.Sprintf("I am %v years old", 10) // I am 10 years old
+	b := fmt.Sprintf("I am %v years old", "way too many") // I am way too many years old
 
 	return s, b
 }
