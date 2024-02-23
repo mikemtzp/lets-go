@@ -5,6 +5,7 @@ package main
 // Ex. "go run main.go printing.go"
 
 func main () {
+	// methods()
 	// printing()
 	// routines()
 }
